@@ -1,26 +1,32 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { Component } from 'react';
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import './App.css';
+import "@fortawesome/fontawesome-free/css/all.min.css";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
-function App() {
+import Home from "./pages/Home";
+import Recipes from "./pages/Recipes";
+import SingleRecipe from "./pages/SingleRecipe";
+import Default from "./pages/Default";
+
+
+
+class App extends Component {
+  render() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <main>
+        {/* navbar */}
+        <Switch>
+          <Route path="/" exact component={Home} />
+          <Route path="/recipes" exact component={Recipes} />
+          <Route path="/recipes/:id" component={SingleRecipe} />
+          <Route component={Default} />
+        </Switch>
+      </main>
+ 
+    </Router>
   );
-}
+}}
 
 export default App;
