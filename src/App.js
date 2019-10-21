@@ -9,6 +9,7 @@ import Recipes from "./pages/Recipes";
 import SingleRecipe from "./pages/SingleRecipe";
 import Default from "./pages/Default";
 
+import Navbar from './components/Navbar';
 
 
 class App extends Component {
@@ -17,6 +18,7 @@ class App extends Component {
     <Router>
       <main>
         {/* navbar */}
+        <Navbar />
         <Switch>
           <Route path="/" exact component={Home} />
           <Route path="/recipes" exact component={Recipes} />
