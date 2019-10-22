@@ -9,7 +9,7 @@ export default class Search extends Component {
                     <div className="col-10 mx-auto col-md-8 mt-5 text-center">
                         <h1 className="text-slanted text-capitalize">
                             search recipes with {" "}
-                            <strong className="text-orange">Chakula 2 uma (Food 2 Fork)</strong>
+                            <strong className="text-orange">Chakula 2 uma<span><br></br></span>(Food 2 Fork)</strong>
                         </h1>
                         <form className="mt-4">
                             <label htmlFor="search" className="text-capitalize">
@@ -20,6 +20,7 @@ export default class Search extends Component {
                                     type="text"
                                     name="search"
                                     className="form-control"
+                                    placeholder="chicken, onion, carrots"
                                     value={search}
                                     onChange={handleChange}
                                 />
