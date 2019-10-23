@@ -7,27 +7,27 @@ class SingleRecipe extends Component {
         super(props);
         const id = this.props.match.params.id;
         this.state = {
-            recipe: recipeData,
-            //recipe: {},
+            //recipe: recipeData,
+            recipe: {},
             id,
-            loading: false
+            loading: true
         }
     }
 
-    // async componentDidMount() {
-    //     const url = ``;
-    //     try {
-    //         const response = await fetch(url);
-    //         const responseData = await response.json();
-    //         console.log(responseData);
-    //         this.setState({
-    //             recipe: responseData.recipe
-    //         })
-    //     } catch (error) {
-    //         console.log(error);
-    //     }
+    async componentDidMount() {
+        const url = `https://www.food2fork.com/api/get?key={process.env.REACT_APP_API_KEY}&rId=${this.state.id}`;
+        try {
+            const response = await fetch(url);
+            const responseData = await response.json();
+            console.log(responseData);
+            this.setState({
+                recipe: responseData.recipe
+            })
+        } catch (error) {
+            console.log(error);
+        }
 
-    // }
+    }
 
     render() {
         const {image_url, publisher, publisher_url, source_url, title, ingredients} = this.state.recipe;
