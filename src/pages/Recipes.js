@@ -24,7 +24,7 @@ class Recipes extends Component {
             const jsonData = await data.json();
             if (jsonData.recipes.length === 0) {
                 this.setState({
-                    error: "Sorry but the gnombs did not return any recipes, please try again or press the search icon for the most popular recipes"
+                    error: "Sorry but the gnomes did not return any recipes, please try again or press the search icon for the most popular recipes"
                 });
             } else {
                 this.setState({
